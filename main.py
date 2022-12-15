@@ -21,7 +21,8 @@ def translate_text(text):
     if isinstance(text, six.binary_type):
         text = text.decode("utf-8")
 
-    result = translate_client.translate(text, target_language='en')
+    result = translate_client.translate(
+        text, target_language='en', format_="text")
     return result["translatedText"]
 
 
@@ -36,5 +37,10 @@ def hello_world():
     })
 
 
-if __name__ == '__main__':
-    app.run(host='', port=5009)
+# if __name__ == '__main__':
+#     app.run(host='', port=5009)
+
+
+text = translate_text("Ти там скоро, Альош? «Плейбой» мій надибав, чи що?")
+
+print(text)
