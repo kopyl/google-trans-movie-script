@@ -57,17 +57,19 @@ chunk_size = 10
 for i in range(0, len(text), chunk_size):
     chunked_list.append(text[i:i+chunk_size])
 
-print("chunked")
+# print("chunked")
+
+# count = 0
+# for chunk in chunked_list:
+#     translations = translate_text(chunk)
+#     count += 1
+#     print(count)
 
 count = 0
-for chunk in chunked_list:
-    translations = translate_text(chunk)
-    righttoowntranslations.insert_many(translations)
+for translation in righttoowntranslations.find({}, {"_id": 0}):
+    # print(json.dumps(translation, indent=4, ensure_ascii=False))
     count += 1
-    print(count)
-
-# for translation in righttoowntranslations.find({}, {"_id": 0}):
-#     print(json.dumps(translation, indent=4, ensure_ascii=False))
+print(count)
 
 
 print("end")
