@@ -35,9 +35,11 @@ def translate_text(text):
     return result
 
 
-print("start")
+# print("start")
 
-text = getText()
+# print(translate_text("Ти там скоро, Альош? «Плейбой» мій надибав, чи що?"))
+
+# text = getText()
 # righttoowntranslations.insert_many(translations)
 
 # print(len(text))
@@ -52,10 +54,10 @@ text = getText()
 #     print(json.dumps(x, indent=4, ensure_ascii=False))
 
 
-chunked_list = list()
-chunk_size = 10
-for i in range(0, len(text), chunk_size):
-    chunked_list.append(text[i:i+chunk_size])
+# chunked_list = list()
+# chunk_size = 10
+# for i in range(0, len(text), chunk_size):
+#     chunked_list.append(text[i:i+chunk_size])
 
 # print("chunked")
 
@@ -65,11 +67,11 @@ for i in range(0, len(text), chunk_size):
 #     count += 1
 #     print(count)
 
-count = 0
+# count = 0
 for translation in righttoowntranslations.find({}, {"_id": 0}):
-    # print(json.dumps(translation, indent=4, ensure_ascii=False))
-    count += 1
-print(count)
+    print(json.dumps(translation, indent=4, ensure_ascii=False))
+# count += 1
+# print(count)
 
 
-print("end")
+# print("end")
