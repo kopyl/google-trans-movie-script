@@ -2575,17 +2575,17 @@ Burn baby burn…
 """
 
 
-textarray = text.split("\n")
-
-# is there are duplicate lines in the text?
-
-
-def duplicate_lines(textarray):
+def getText():
+    clean_text_parts = []
+    textarray = text.split("\n")
     for line in textarray:
         if line.strip() == "":
             continue
         if textarray.count(line) > 1:
-            print(line.strip())
+            continue
+        clean_text_parts.append(line.strip())
+
+    return clean_text_parts
 
 
-print(duplicate_lines(textarray))
+print(len("".join(getText())))
