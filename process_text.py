@@ -2586,6 +2586,3 @@ def getText():
         clean_text_parts.append(line.strip())
 
     return clean_text_parts
-
-
-print(len("".join(getText())))
